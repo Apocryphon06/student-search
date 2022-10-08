@@ -7,7 +7,6 @@ const App = () => {
   return (
     <StudentContextProvider>
       <Navbar />
-      <Student />
     </StudentContextProvider>
   );
 };

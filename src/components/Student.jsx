@@ -1,7 +1,6 @@
 import { Grid } from "@material-ui/core";
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { StudentContext } from "../context/StudentContext";
 import { nanoid } from "nanoid";
 
 const Container = styled.div`
@@ -37,14 +36,11 @@ const Name = styled.div`
   font-size: 18px;
 `;
 
-const Student = () => {
-  // eslint-disable-next-line
-  const [students, setStudents] = useContext(StudentContext);
-
+const Student = (props) => {
   return (
     <Container>
       <Grid container spacing={2}>
-        {students.map((item) => (
+        {props.value.map((item) => (
           <Grid key={nanoid()} item xs={3}>
             <Wrapper>
               <ImageContainer>
@@ -53,7 +49,7 @@ const Student = () => {
                   alt="profile-img"
                 />
               </ImageContainer>
-              <Name>{item.Name} </Name>
+              <Name>{item.name} </Name>
             </Wrapper>
           </Grid>
         ))}
