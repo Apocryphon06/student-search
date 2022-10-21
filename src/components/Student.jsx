@@ -41,11 +41,13 @@ const Student = (props) => {
     <Container>
       <Grid container spacing={2}>
         {props.value.map((item) => (
-          <Grid key={nanoid()} item xs={3}>
+          <Grid key={nanoid()} item xs={{lg:'2',xs:'',md:'4'}} >
             <Wrapper>
               <ImageContainer>
                 <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI4xGYKA-ybGyuo5PldvZHmepFVkfpLXjZJg&usqp=CAU"
+                  src={`https://picsum.photos/id/${Math.floor(
+                    Math.random() * 100
+                  )}/200`}
                   alt="profile-img"
                 />
               </ImageContainer>
